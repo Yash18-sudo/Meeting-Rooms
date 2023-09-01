@@ -1,225 +1,313 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-html,body{
-    width: 100%;
-    height:100vh;
-    background: hsl(30, 38%, 92%);
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background: hsl(30, 38%, 92%);
 }
 
-.navbar{
-    z-index:999;
-    position: fixed;
-    top:0;
-    height:10vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background:goldenrod;
-    font-size: 1.2rem;
+.navbar {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: goldenrod;
+  font-size: 1.2rem;
 }
 
 
-.gallery{
-    margin-top:30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  
-  .card {
-    width:26%;
-    position:relative;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .card img{
-    width:100%;
-    height:100%;
-    filter: grayscale(0%);
-    box-shadow: 0 0 20px #333;
-    object-fit: cover;
-  }
-
-  .card:hover {
-    transform: scale(1.03);
-    transition: 0.5s;
-    filter: drop-shadow(0 0 10px #333);
-  }
-  
-  
-  .card:hover img {
-    filter: grayscale(100%);
-  }
-  
-  .card figcaption{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 25px;
-    width: 100%;
-    height: 20%;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    opacity: 0;
-    border-radius: 0 0 10px 10px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
-    transition: 0.3s;
-    text-align:center;
-  }
-  
-  .card:hover figcaption {
-    opacity: 1;
-    transform: scale(1.03);
-  }  
-
-.logo{
-    display: flex;
+.gallery {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.logo img{
-    height:50px;
-    margin-left:10px ;
+.card {
+  width: 26%;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.navbar a{
-    text-decoration: none;
-    margin: 10px;
-    color:black; 
-}
-.sections{
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
+.card img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(0%);
+  box-shadow: 0 0 20px #333;
+  object-fit: cover;
 }
 
-.hero-section{
-    height: 100%;
-    overflow: hidden;
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  filter: drop-shadow(0 0 10px #333);
 }
 
-#room-list, #booking-form, #user-bookings{
-    padding-top: 70px;
-    margin-top:10px;
-    height: 100%;
+
+.card:hover img {
+  filter: grayscale(100%);
 }
 
-#room-list{
-    padding-top: 70px;
-    height:100%;
-    max-width:1200px;
-    margin:0 auto;
-  }
-  
+.card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 20%;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.3s;
+  text-align: center;
+}
 
-select, button {
-    margin: 10px 0;
+.card:hover figcaption {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.logo {
+  display: flex;
+}
+
+.logo img {
+  height: 50px;
+  margin-left: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  margin: 10px;
+  color: black;
+}
+
+.sections {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+
+.hero-section {
+  height: 100%;
+  overflow: hidden;
+}
+
+#room-list,
+#booking-form,
+#user-bookings {
+  padding-top: 70px;
+  margin-top: 10px;
+  height: 100%;
+}
+
+#room-list {
+  padding-top: 70px;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+select,
+button {
+  margin: 10px 0;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 li {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
-#room-list #rooms{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 10px;
-    font-size: 20px;
+#room-list #rooms {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  font-size: 20px;
 }
 
-#room-list h2{
-    text-align: center;
-    font-size: 40px;
+#room-list h2 {
+  text-align: center;
+  font-size: 40px;
 }
 
 #rooms li {
-    height: 100px;
-    width: 200px;
-    text-align: center;
-    background: pink;
+  height: 100px;
+  width: 200px;
+  text-align: center;
+  background: pink;
 }
 
-#booking-form h2{
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
+#booking-form h2 {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
 }
 
-#rooms li{
-    display:none;
+#rooms li {
+  display: none;
 }
 
 
 :root {
-    --darkGreen: hsl(158, 36%, 37%);
-    --cream: hsl(30, 38%, 92%);
-    --gray: hsl(228, 12%, 48%);
-    --white: hsl(0, 0%, 100%);
-    --head: 2rem;
-    --text: 1rem;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  .container {
-    min-height: 50vh;
-    background-color: var(--cream);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card-box {
-    margin-top: 10px;
-    max-width: 400px;
-    background-color: white;
-    border-radius: 1.5em;
-  }
-  
-  
-  .card_text {
-    text-align: left;
-    margin: 1.5em 2em;
-  }
-  
-  .product {
-    font-size: var(--text);
-    color: var(--gray);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
+  --darkGreen: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --gray: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --head: 2rem;
+  --text: 1rem;
+}
 
-  .btn {
-    margin-top: 1rem;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  .btn_img {
-    width: 100%;
-    border:10px solid hsl(156, 24%, 24%);
-    border-radius: 0.7em;
-  }
+img {
+  max-width: 100%;
+}
 
-  .btn h3{
-    text-align: center;
-    font-weight: 1000;
-  }
-  
+.container {
+  min-height: 50vh;
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-box {
+  margin-top: 10px;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 1.5em;
+}
+
+
+.card_text {
+  text-align: left;
+  margin: 1.5em 2em;
+}
+
+.product {
+  font-size: var(--text);
+  color: var(--gray);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.btn {
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn_img {
+  width: 100%;
+  border: 10px solid hsl(156, 24%, 24%);
+  border-radius: 0.7em;
+}
+
+.btn h3 {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.selectTime {
+  color: #333;
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time {
+  width: 10rem;
+  height: 2.5rem;
+  border: 1px solid #494eea;
+  outline: 0;
+  padding: 10px;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+}
+
+#book-button {
+  width: 10rem;
+  height: 2.5rem;
+  background: #494eea;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.205);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#user-bookings ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+}
+
+#user-bookings h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 1.5rem;
+}
+
+#user-bookings ul li {
+  background: #494eea;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.205);
+  cursor: pointer;
+  font-weight: 500;
+  width:70%;
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  position: relative;
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span:hover {
+  background: rgba(0, 0, 0, 0.277);
+}

@@ -66,8 +66,8 @@ function bookRoom() {
 }
 
 // Function to display user bookings
+const bookingsList = document.getElementById("bookings");
 function displayUserBookings() {
-    const bookingsList = document.getElementById("bookings");
     bookingsList.innerHTML = "";
     
     for (const room in bookedRooms) {
@@ -76,9 +76,23 @@ function displayUserBookings() {
             const li = document.createElement("li");
             li.textContent = `${room}: ${booking}`;
             bookingsList.appendChild(li);
+            let span = document.createElement("span");
+            span.innerHTML="\u00d7";
+            li.appendChild(span)
         });
     }
 }
+
+bookingsList.addEventListener("click", function(e){
+    const parentElement = e.target.parentElement;
+    let [room, time] = parentElement.innerText.split(": ");
+    [time,x] = time.split("\n");
+    if(e.target.tagName === "SPAN"){
+        const index = bookedRooms[room].indexOf(time);
+        bookedRooms[room].splice(index, 1);
+        e.target.parentElement.remove();
+    }
+},false);
 
 // Initialize the application
 window.onload = function () {
