@@ -1,6 +1,38 @@
 // Sample data to simulate room availability
 const availableRooms = ["Room 1", "Room 2", "Room 3","Room 4","Room 5","Room 6"];
 const bookedRooms = {};
+
+const RoomImage = document.querySelector('.btn img');
+const Room = document.querySelector('#room');
+const cardElements = document.querySelectorAll('figure.card');
+let roomSelect = "";
+const RoomNo = document.querySelector('.btn h3');
+
+cardElements.forEach(cardElement => {
+
+    cardElement.addEventListener("click", function(e){
+                
+            
+    // Find the img element within the card element
+    const imgElement = cardElement.querySelector('img');
+    
+    // Find the figcaption element within the card element
+    const figcaptionElement = cardElement.querySelector('figcaption');
+    
+    // Get the src attribute value from the img element
+    const src = imgElement ? imgElement.getAttribute('src') : '';
+    
+    // Get the text content of the figcaption element
+    const figcaption = figcaptionElement ? figcaptionElement.textContent : '';
+    
+    // Push the values into the respective arrays
+    RoomImage.src = src;
+    roomSelect = figcaption;
+    RoomNo.innerHTML = roomSelect;
+  });
+});
+
+
 // Function to display available rooms
 function displayAvailableRooms() {
     const roomsList = document.getElementById("rooms");
@@ -15,11 +47,10 @@ function displayAvailableRooms() {
 
 // Function to book a room
 function bookRoom() {
-    const roomSelect = document.getElementById("room");;
+    
     const timeSelect = document.getElementById("time");
-    const selectedRoom = roomSelect.value;
+    const selectedRoom = roomSelect;
     const selectedTime = timeSelect.value;
-
 
     if (!bookedRooms[selectedRoom]) {
         bookedRooms[selectedRoom] = [];
@@ -28,6 +59,7 @@ function bookRoom() {
     if (!bookedRooms[selectedRoom].includes(selectedTime)) {
         bookedRooms[selectedRoom].push(selectedTime);
         displayUserBookings();
+        alert("Room booked successfully.");
     } else {
         alert("This room is already booked for the selected time slot.");
     }
