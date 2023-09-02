@@ -98,9 +98,9 @@ body {
 }
 
 .sections {
-  width: 40%;
+  width: 25%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 5px;
 }
