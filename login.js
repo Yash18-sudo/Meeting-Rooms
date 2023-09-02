@@ -54,7 +54,7 @@ var firebaseConfig = {
       database_ref.child('users/' + user.uid).set(user_data)
   
       // DOne
-      alert('User Created!!')
+      alert('User Created!! Please Login')
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
@@ -95,7 +95,7 @@ var firebaseConfig = {
       database_ref.child('users/' + user.uid).update(user_data)
   
       // DOne
-      //Navigate to folder Home -> Home.html
+      //Navigate to  Home.html
       window.location.href = "home.html" 
     })
     .catch(function(error) {
