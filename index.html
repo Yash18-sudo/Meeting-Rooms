@@ -1,135 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login + Firebase Database</title>
+         <!-- Cool Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" type="text/css" href="login.css">
+    </head>
+    <body>
+        <div id="content_container">
+            <div id="form_container">
+                <div id="form_header_container">
+                    <h2 id="form_header"> Login + Firebase Database </h2>
+                </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Meeting Master</title>
-</head>
+                <div id="form_content_container">
+                    <div id="form_content_inner_container">
+                        <input type="text" id="full_name" placeholder="Full name">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="password" id="password" placeholder="New Password">
 
-<body>
-    <div class="navbar">
-
-        <div class="logo">
-            <img src="./assets/main-logo.png"
-                alt="logo">
-            <a href="#room-list">Meeting Master</a>
-        </div>
-
-        <div class="sections">
-            <a href="#room-list">Book a Room</a>
-            <a href="#user-bookings">Your Bookings</a>
-            <a href="#room-list">Login/SignUp</a>
-        </div>
-    </div>
-
-    <div class="hero-section">
-        <!-- Display available rooms -->
-        <div id="room-list">
-            <h2>ROOMS FOR MEETING</h2>
-            <ul id="rooms"></ul>
-            <div class="gallery">
-                <figure class="card">
-                    <a href="#booking-form">
-                        <img class="carimg"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBqlj48J4yNIelfqcq342miIq_CvdmdYxfXJcH2z1JvS5mCn-FfX0awXQbeeTvPVI_UM&usqp=CAU"
-                            alt="">
-                    </a>
-                    <figcaption>Room 1</figcaption>
-                </figure>
-
-                <figure class="card">
-                    <a href="#booking-form">
-                        <img class="carimg"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ezX7XTD-9OQXs0f3ROAMeIqUaf0ivdOtpqqA00U4YSAmPBEpM5_gd4cznNZi__xeqWo&usqp=CAU"
-                            alt="">
-                    </a>
-                    <figcaption>Room 2</figcaption>
-                </figure>
-
-                <figure class="card">
-                    <a href="#booking-form">
-                        <img class="carimg"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1JZk6-Y6mPaRjO2F389Or9UXsb72-eu8N2x7E18VikebQCE4LhP9s2JnD6HBwkt9yRbY&usqp=CAU"
-                            alt="">
-                    </a>
-                    <figcaption>Room 3</figcaption>
-                </figure>
-
-                <figure class="card">
-                    <a href="#booking-form">
-                        <img class="carimg"
-                            src="https://media.istockphoto.com/id/1248785184/photo/modern-meeting-room-interior-with-empty-tv-screen-and-sunlight.jpg?s=612x612&w=0&k=20&c=H6PeJ1soXRnVCQMB9oDdUZEXS1gdxw3ZIloQgwd0ep0="
-                            alt="">
-                    </a>
-                    <figcaption>Room 4</figcaption>
-                </figure>
-
-                <figure class="card">
-                    <a href="#booking-form">
-                        <img class="carimg"
-                            src="https://media.istockphoto.com/id/629458130/photo/conference-room-with-city-view.jpg?s=612x612&w=0&k=20&c=PcWg9dpIb2J-0_UEdg7GfHQf5OcLxeyvjuJU__xvymc="
-                            alt="">
-                    </a>
-                    <figcaption>Room 5</figcaption>
-                </figure>
-
-                <figure class="card">
-                    <a href="#booking-form">
-                        <img class="carimg"
-                            src="https://media.istockphoto.com/id/811844168/photo/business-office-interior-conference-desk-and-projection-screen.jpg?s=612x612&w=0&k=20&c=SV2FNIepsm6nRBbBks99BBxitfrgv0xdfeK4bGWG-qg="
-                            alt="">
-                    </a>
-                    <figcaption>Room 6</figcaption>
-                </figure>
-            </div>
-        </div>
-
-        <!-- Booking form -->
-        <div id="booking-form">
-            <section class="container">
-                <div class="card-box">
-
-                    <div class="card_text">
-                        <h2 class="product_title">Selected Room:</h2>
-                        <div class="btn">
-                            <img src="https://media.istockphoto.com/id/629458130/photo/conference-room-with-city-view.jpg?s=612x612&w=0&k=20&c=PcWg9dpIb2J-0_UEdg7GfHQf5OcLxeyvjuJU__xvymc="
-                                alt="" class="btn_img">
-                            <h3></h3>
+                        <div id="button_container">
+                            <button onclick="login()">Login</button>
+                            <button onclick="register()">Register</button>
                         </div>
+
                     </div>
                 </div>
-            </section>
-            <div class="selectTime">
-                <label for="time">Select Time Slot:</label>
-                <select id="time">
-                    <option value="9:00-9:30">9:00-9:30</option>
-                    <option value="9:30-10:00">9:30-10:00</option>
-                    <option value="10:00-10:30">10:00-10:30</option>
-                    <option value="10:30-11:00">10:30-11:00</option>
-                    <option value="11:00-11:30">11:00-11:30</option>
-                    <option value="11:30-12:00">11:30-12:00</option>
-                    <!-- Add more time slots as needed -->
-                </select>
             </div>
-            <div id="button">
-                <button id="book-button">Book</button>
-                <a href="#room-list"><button id="book-button">Book another Room</button></a>
-            </div>
-
         </div>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-        <!-- Display user bookings -->
-        <div id="user-bookings">
-            <h2>Your Bookings</h2>
-            <ul id="bookings"></ul>
-        </div>
-    </div>
-   
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
-<script src="script.js"></script>
-</body>
+    <!-- Our script must be loaded after firebase references -->
+    <script src="login.js"></script>
 
 </html>

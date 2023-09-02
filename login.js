@@ -95,8 +95,8 @@ var firebaseConfig = {
       database_ref.child('users/' + user.uid).update(user_data)
   
       // DOne
-      //Navigate to index.html
-      window.location.href = "index.html"
+      //Navigate to folder Home -> Home.html
+      window.location.href = "home.html" 
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
