@@ -1,6 +1,6 @@
 // Sample data to simulate room availability
 const availableRooms = ["Room 1", "Room 2", "Room 3","Room 4","Room 5","Room 6"];
-const bookedRooms = {};
+let bookedRooms = {};
 
 const RoomImage = document.querySelector('.btn img');
 const Room = document.querySelector('#room');
@@ -47,27 +47,34 @@ function displayAvailableRooms() {
 
 // Function to book a room
 function bookRoom() {
-    
     const timeSelect = document.getElementById("time");
     const selectedRoom = roomSelect;
     const selectedTime = timeSelect.value;
-
+    
     if (!bookedRooms[selectedRoom]) {
+        
         bookedRooms[selectedRoom] = [];
     }
 
     if (!bookedRooms[selectedRoom].includes(selectedTime)) {
         bookedRooms[selectedRoom].push(selectedTime);
         displayUserBookings();
+        
         alert("Room booked successfully.");
+        saveData();
+        
     } else {
         alert("This room is already booked for the selected time slot.");
     }
+    
 }
 
 // Function to display user bookings
+
 const bookingsList = document.getElementById("bookings");
+
 function displayUserBookings() {
+    
     bookingsList.innerHTML = "";
     
     for (const room in bookedRooms) {
@@ -90,7 +97,9 @@ bookingsList.addEventListener("click", function(e){
     if(e.target.tagName === "SPAN"){
         const index = bookedRooms[room].indexOf(time);
         bookedRooms[room].splice(index, 1);
-        e.target.parentElement.remove();
+        e.target.parentElement.remove();   
+        
+        saveData();
     }
 },false);
 
@@ -98,9 +107,24 @@ bookingsList.addEventListener("click", function(e){
 window.onload = function () {
     displayAvailableRooms();
     displayUserBookings();
-
+    showTask();
+    displayUserBookings();
     const bookButton = document.getElementById("book-button");
     bookButton.addEventListener("click", bookRoom);
 };
 
+function saveData(){
+    const bookedRoomsJSON = JSON.stringify(bookedRooms);
+    localStorage.setItem("booked", bookedRoomsJSON);
+    
+}
 
+function showTask(){
+    const bookedRoomsJSON = localStorage.getItem("booked");
+    if(!bookedRoomsJSON){
+        bookedRooms = {"Room 1":[]};
+    }
+    else{
+        bookedRooms = JSON.parse(bookedRoomsJSON);
+    }
+}

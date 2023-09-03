@@ -27,7 +27,7 @@ body {
 
 
 .gallery {
-  margin-top: 30px;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -67,7 +67,7 @@ body {
   padding: 25px;
   width: 100%;
   height: 20%;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
   color: #fff;
   opacity: 0;
@@ -84,10 +84,11 @@ body {
 
 .logo {
   display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 50px;
+  height: 3rem;
   margin-left: 10px;
 }
 
@@ -119,10 +120,8 @@ body {
 }
 
 #room-list {
-  padding-top: 70px;
-  height: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0.4rem auto;
 }
 
 
@@ -139,16 +138,17 @@ li {
   margin: 5px 0;
 }
 
-#room-list #rooms {
+/* #room-list #rooms {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 10px;
   font-size: 20px;
-}
+} */
 
 #room-list h2 {
+  margin-top:0.2rem;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 #rooms li {
@@ -159,7 +159,7 @@ li {
 }
 
 #booking-form h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   display: flex;
   justify-content: center;
 }
@@ -310,4 +310,33 @@ ul li span {
 
 ul li span:hover {
   background: rgba(0, 0, 0, 0.277);
+}
+
+@media(max-width:420px){
+  .navbar{
+    height: 7%;
+    font-size: small;
+
+  }
+  .sections{
+    width: 35%;
+  }
+  .gallery{
+    align-items:center;
+  }
+  .card{
+    width:40%;
+  }
+  #room-list h2{
+    font-size: 1.5rem;
+  }
+  .card figcaption{
+    font-size: 0.8rem;
+  }
+  .selectTime{
+    font-size: 1.5rem;
+  }
+  #user-bookings ul{
+    grid-template-columns: auto;
+  }
 }
