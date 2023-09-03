@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/main-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>Meeting Master</title>
 </head>
@@ -13,15 +14,14 @@
     <div class="navbar">
 
         <div class="logo">
-            <img src="./assets/main-logo.png"
-                alt="logo">
+            <img src="./assets/main-logo.png" alt="logo">
             <a href="#room-list">Meeting Master</a>
         </div>
 
         <div class="sections">
-            <a href="#room-list">Book a Room</a>
+            <a href="#room-list">Book Rooms</a>
             <a href="#user-bookings">Your Bookings</a>
-            <!-- <a href="#room-list">Login/SignUp</a> -->
+
         </div>
     </div>
 
@@ -37,7 +37,7 @@
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBqlj48J4yNIelfqcq342miIq_CvdmdYxfXJcH2z1JvS5mCn-FfX0awXQbeeTvPVI_UM&usqp=CAU"
                             alt="">
                     </a>
-                    <figcaption>Room 1</figcaption>
+                    <figcaption class="myClickableCaption">Room 1</figcaption>
                 </figure>
 
                 <figure class="card">
@@ -46,7 +46,7 @@
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ezX7XTD-9OQXs0f3ROAMeIqUaf0ivdOtpqqA00U4YSAmPBEpM5_gd4cznNZi__xeqWo&usqp=CAU"
                             alt="">
                     </a>
-                    <figcaption>Room 2</figcaption>
+                    <figcaption class="myClickableCaption">Room 2</figcaption>
                 </figure>
 
                 <figure class="card">
@@ -55,7 +55,7 @@
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1JZk6-Y6mPaRjO2F389Or9UXsb72-eu8N2x7E18VikebQCE4LhP9s2JnD6HBwkt9yRbY&usqp=CAU"
                             alt="">
                     </a>
-                    <figcaption>Room 3</figcaption>
+                    <figcaption class="myClickableCaption">Room 3</figcaption>
                 </figure>
 
                 <figure class="card">
@@ -64,7 +64,7 @@
                             src="https://media.istockphoto.com/id/1248785184/photo/modern-meeting-room-interior-with-empty-tv-screen-and-sunlight.jpg?s=612x612&w=0&k=20&c=H6PeJ1soXRnVCQMB9oDdUZEXS1gdxw3ZIloQgwd0ep0="
                             alt="">
                     </a>
-                    <figcaption>Room 4</figcaption>
+                    <figcaption class="myClickableCaption">Room 4</figcaption>
                 </figure>
 
                 <figure class="card">
@@ -73,7 +73,7 @@
                             src="https://media.istockphoto.com/id/629458130/photo/conference-room-with-city-view.jpg?s=612x612&w=0&k=20&c=PcWg9dpIb2J-0_UEdg7GfHQf5OcLxeyvjuJU__xvymc="
                             alt="">
                     </a>
-                    <figcaption>Room 5</figcaption>
+                    <figcaption class="myClickableCaption">Room 5</figcaption>
                 </figure>
 
                 <figure class="card">
@@ -82,7 +82,7 @@
                             src="https://media.istockphoto.com/id/811844168/photo/business-office-interior-conference-desk-and-projection-screen.jpg?s=612x612&w=0&k=20&c=SV2FNIepsm6nRBbBks99BBxitfrgv0xdfeK4bGWG-qg="
                             alt="">
                     </a>
-                    <figcaption>Room 6</figcaption>
+                    <figcaption class="myClickableCaption">Room 6</figcaption>
                 </figure>
             </div>
         </div>
@@ -127,9 +127,9 @@
             <ul id="bookings"></ul>
         </div>
     </div>
-   
 
-<script src="script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

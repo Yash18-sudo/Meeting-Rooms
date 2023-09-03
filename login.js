@@ -1,144 +1,144 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyDe-KGdR_z_RX_YZ3JaTuUb8QnbKurcd_E",
-    authDomain: "auth-boss.firebaseapp.com",
-    databaseURL: "https://auth-boss-default-rtdb.firebaseio.com",
-    projectId: "auth-boss",
-    storageBucket: "auth-boss.appspot.com",
-    messagingSenderId: "415231593338",
-    appId: "1:415231593338:web:f1437a5a94f0e869f8e4c3",
-    measurementId: "G-CE77VC32BE"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  // Initialize variables
-  const auth = firebase.auth()
-  const database = firebase.database()
-  
-  // Set up our register function
-  function register () {
-    // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-    full_name = document.getElementById('full_name').value
+  apiKey: "AIzaSyDe-KGdR_z_RX_YZ3JaTuUb8QnbKurcd_E",
+  authDomain: "auth-boss.firebaseapp.com",
+  databaseURL: "https://auth-boss-default-rtdb.firebaseio.com",
+  projectId: "auth-boss",
+  storageBucket: "auth-boss.appspot.com",
+  messagingSenderId: "415231593338",
+  appId: "1:415231593338:web:f1437a5a94f0e869f8e4c3",
+  measurementId: "G-CE77VC32BE"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth()
+const database = firebase.database()
 
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Email or Password is Outta Line!!')
-      return
-      // Don't continue running the code
-    }
-    if (validate_field(full_name) == false ) {
-      alert('One or More Extra Fields is Outta Line!!')
-      return
-    }
-   
-    // Move on with Auth
-    auth.createUserWithEmailAndPassword(email, password)
-    .then(function() {
+// Set up our register function
+function register() {
+  // Get all our input fields
+  email = document.getElementById('email').value
+  password = document.getElementById('password').value
+  full_name = document.getElementById('full_name').value
+
+
+  // Validate input fields
+  if (validate_email(email) == false || validate_password(password) == false) {
+    swal("", "Email or Password is Outta Line!!", "warning")
+    return
+    // Don't continue running the code
+  }
+  if (validate_field(full_name) == false) {
+    swal("", "One or More Extra Fields is Outta Line!!", "warning")
+    return
+  }
+
+  // Move on with Auth
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(function () {
       // Declare user variable
       var user = auth.currentUser
-  
+
       // Add this user to Firebase Database
       var database_ref = database.ref()
-  
+
       // Create User data
       var user_data = {
-        email : email,
-        full_name : full_name,
-        last_login : Date.now()
+        email: email,
+        full_name: full_name,
+        last_login: Date.now()
       }
-  
+
       // Push to Firebase Database
       database_ref.child('users/' + user.uid).set(user_data)
-  
+
       // DOne
-      alert('User Created!! Please Login')
+      swal("User Created", "Please Login", "success")
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code
       var error_message = error.message
-  
-      alert(error_message)
+
+      swal("", error_message, "warning")
     })
+}
+
+// Set up our login function
+function login() {
+  // Get all our input fields
+  email = document.getElementById('email').value
+  password = document.getElementById('password').value
+
+  // Validate input fields
+  if (validate_email(email) == false || validate_password(password) == false) {
+    swal("", "Email or Password is Outta Line!!", "warning")
+    return
+    // Don't continue running the code
   }
-  
-  // Set up our login function
-  function login () {
-    // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Email or Password is Outta Line!!')
-      return
-      // Don't continue running the code
-    }
-  
-    auth.signInWithEmailAndPassword(email, password)
-    .then(function() {
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(function () {
       // Declare user variable
       var user = auth.currentUser
-  
+
       // Add this user to Firebase Database
       var database_ref = database.ref()
-  
+
       // Create User data
       var user_data = {
-        last_login : Date.now()
+        last_login: Date.now()
       }
-  
+
       // Push to Firebase Database
       database_ref.child('users/' + user.uid).update(user_data)
-  
+
       // DOne
       //Navigate to  Home.html
-      window.location.href = "home.html" 
+      window.location.href = "home.html"
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // Firebase will use this to alert of its errors
       var error_code = error.code
       var error_message = error.message
-  
-      alert(error_message)
+
+      swal("", error_message, "error")
     })
+}
+
+
+
+
+// Validate Functions
+function validate_email(email) {
+  expression = /^[^@]+@\w+(\.\w+)+\w$/
+  if (expression.test(email) == true) {
+    // Email is good
+    return true
+  } else {
+    // Email is not good
+    return false
   }
-  
-  
-  
-  
-  // Validate Functions
-  function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
-    if (expression.test(email) == true) {
-      // Email is good
-      return true
-    } else {
-      // Email is not good
-      return false
-    }
+}
+
+function validate_password(password) {
+  // Firebase only accepts lengths greater than 6
+  if (password < 6) {
+    return false
+  } else {
+    return true
   }
-  
-  function validate_password(password) {
-    // Firebase only accepts lengths greater than 6
-    if (password < 6) {
-      return false
-    } else {
-      return true
-    }
+}
+
+function validate_field(field) {
+  if (field == null) {
+    return false
   }
-  
-  function validate_field(field) {
-    if (field == null) {
-      return false
-    }
-  
-    if (field.length <= 0) {
-      return false
-    } else {
-      return true
-    }
+
+  if (field.length <= 0) {
+    return false
+  } else {
+    return true
   }
+}

@@ -1,5 +1,5 @@
 // Sample data to simulate room availability
-const availableRooms = ["Room 1", "Room 2", "Room 3","Room 4","Room 5","Room 6"];
+const availableRooms = ["Room 1", "Room 2", "Room 3", "Room 4", "Room 5", "Room 6"];
 let bookedRooms = {};
 
 const RoomImage = document.querySelector('.btn img');
@@ -7,29 +7,37 @@ const Room = document.querySelector('#room');
 const cardElements = document.querySelectorAll('figure.card');
 let roomSelect = "";
 const RoomNo = document.querySelector('.btn h3');
+const clickableCaption = document.querySelectorAll(".myClickableCaption");
 
 cardElements.forEach(cardElement => {
 
-    cardElement.addEventListener("click", function(e){
-                
-            
-    // Find the img element within the card element
-    const imgElement = cardElement.querySelector('img');
-    
-    // Find the figcaption element within the card element
-    const figcaptionElement = cardElement.querySelector('figcaption');
-    
-    // Get the src attribute value from the img element
-    const src = imgElement ? imgElement.getAttribute('src') : '';
-    
-    // Get the text content of the figcaption element
-    const figcaption = figcaptionElement ? figcaptionElement.textContent : '';
-    
-    // Push the values into the respective arrays
-    RoomImage.src = src;
-    roomSelect = figcaption;
-    RoomNo.innerHTML = roomSelect;
-  });
+    cardElement.addEventListener("click", function (e) {
+
+
+        // Find the img element within the card element
+        const imgElement = cardElement.querySelector('img');
+
+        // Find the figcaption element within the card element
+        const figcaptionElement = cardElement.querySelector('figcaption');
+
+        // Get the src attribute value from the img element
+        const src = imgElement ? imgElement.getAttribute('src') : '';
+
+        // Get the text content of the figcaption element
+        const figcaption = figcaptionElement ? figcaptionElement.textContent : '';
+
+        // Push the values into the respective arrays
+        RoomImage.src = src;
+        roomSelect = figcaption;
+        RoomNo.innerHTML = roomSelect;
+    });
+});
+
+clickableCaption.forEach(cardElement => {
+
+    cardElement.addEventListener("click", function () {
+        window.location.href = "home.html#booking-form";
+    });
 });
 
 
@@ -37,7 +45,7 @@ cardElements.forEach(cardElement => {
 function displayAvailableRooms() {
     const roomsList = document.getElementById("rooms");
     roomsList.innerHTML = "";
-    
+
     availableRooms.forEach(room => {
         const li = document.createElement("li");
         li.textContent = room;
@@ -50,23 +58,22 @@ function bookRoom() {
     const timeSelect = document.getElementById("time");
     const selectedRoom = roomSelect;
     const selectedTime = timeSelect.value;
-    
+
     if (!bookedRooms[selectedRoom]) {
-        
+
         bookedRooms[selectedRoom] = [];
     }
 
     if (!bookedRooms[selectedRoom].includes(selectedTime)) {
         bookedRooms[selectedRoom].push(selectedTime);
         displayUserBookings();
-        
-        alert("Room booked successfully.");
+        swal("", "Room booked successfully.", "success");
         saveData();
-        
+
     } else {
-        alert("This room is already booked for the selected time slot.");
+        swal("", "This room is already booked for the selected time slot.", "error");
     }
-    
+
 }
 
 // Function to display user bookings
@@ -74,9 +81,9 @@ function bookRoom() {
 const bookingsList = document.getElementById("bookings");
 
 function displayUserBookings() {
-    
+
     bookingsList.innerHTML = "";
-    
+
     for (const room in bookedRooms) {
         const roomBookings = bookedRooms[room];
         roomBookings.forEach(booking => {
@@ -84,24 +91,24 @@ function displayUserBookings() {
             li.textContent = `${room}: ${booking}`;
             bookingsList.appendChild(li);
             let span = document.createElement("span");
-            span.innerHTML="\u00d7";
+            span.innerHTML = "\u00d7";
             li.appendChild(span)
         });
     }
 }
 
-bookingsList.addEventListener("click", function(e){
+bookingsList.addEventListener("click", function (e) {
     const parentElement = e.target.parentElement;
     let [room, time] = parentElement.innerText.split(": ");
-    [time,x] = time.split("\n");
-    if(e.target.tagName === "SPAN"){
+    [time, x] = time.split("\n");
+    if (e.target.tagName === "SPAN") {
         const index = bookedRooms[room].indexOf(time);
         bookedRooms[room].splice(index, 1);
-        e.target.parentElement.remove();   
-        
+        e.target.parentElement.remove();
+
         saveData();
     }
-},false);
+}, false);
 
 // Initialize the application
 window.onload = function () {
@@ -113,18 +120,18 @@ window.onload = function () {
     bookButton.addEventListener("click", bookRoom);
 };
 
-function saveData(){
+function saveData() {
     const bookedRoomsJSON = JSON.stringify(bookedRooms);
     localStorage.setItem("booked", bookedRoomsJSON);
-    
+
 }
 
-function showTask(){
+function showTask() {
     const bookedRoomsJSON = localStorage.getItem("booked");
-    if(!bookedRoomsJSON){
-        bookedRooms = {"Room 1":[]};
+    if (!bookedRoomsJSON) {
+        bookedRooms = { "Room 1": [] };
     }
-    else{
+    else {
         bookedRooms = JSON.parse(bookedRoomsJSON);
     }
 }
