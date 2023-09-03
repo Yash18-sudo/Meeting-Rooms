@@ -10,10 +10,8 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="" alt="project-screenshot" width="400" height="400/">
-
-<img src="data:image/jpeg" alt="project-screenshot" width="100" height="100/">
-
+![Login Page](https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/login.gif)
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/login.gif" alt="Login" width="300px" height="200px">
   
   
 <h2>💡 Features</h2>
