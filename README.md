@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Book Meeting Rooms</h1>
 
-<p align="center"><img src="https://socialify.git.ci/Yash18-sudo/Meeting-Rooms/image?font=Inter&amp;name=1&amp;owner=1&amp;theme=Light" alt="project-image"></p>
+<p align="center"><img src="https://socialify.git.ci/Yash18-sudo/Meeting-Rooms/image?font=Inter&amp;name=1&amp;owner=1&amp;theme=Light" alt="project-image" width="500px" height="200px"> </p>
 
 <p id="description">The Meeting Room Booking App is a web application that allows users to book meeting rooms. Users can log in or sign up view available meeting rooms book a room for a specific time and manage their bookings.</p>
 
@@ -9,11 +9,14 @@
 [https://luminous-starlight-1f709e.netlify.app/](https://luminous-starlight-1f709e.netlify.app/)
 
 <h2>Project Screenshots:</h2>
+<h3>Login Page:-</h3>
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/login.gif" alt="Login" width="500px" height="250px">
 
-<img src="" alt="project-screenshot" width="400" height="400/">
+<h3>Home Page:-</h3>
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/Landing.gif" alt="Landing" width="500px" height="250px">
 
-<img src="data:image/jpeg" alt="project-screenshot" width="100" height="100/">
-
+<h3>Booking and Booked section:-</h3>
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/booking.gif" alt="Booking" width="500px" height="250px">
   
   
 <h2>💡 Features</h2>
@@ -52,5 +55,8 @@ Technologies used in the project:</h2>
 
  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>
 
- 
+ ---
+<p align="right">"Efficiently booking meeting rooms is the cornerstone of productive collaboration." </p>
+<p align="right"> – Yash18-sudo <p>
+
 
