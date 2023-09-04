@@ -6,17 +6,17 @@
 
 <h2>🚀 Demo Link</h2>
 
-[https://luminous-starlight-1f709e.netlify.app/](https://luminous-starlight-1f709e.netlify.app/)
+[https://yash18-sudo.github.io/Meeting-Rooms/](https://yash18-sudo.github.io/Meeting-Rooms/)
 
 <h2>Project Screenshots:</h2>
 <h3>Login Page:-</h3>
-<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/login.gif" alt="Login" width="500px" height="250px">
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/1.gif" alt="Login" width="500px" height="250px">
 
 <h3>Home Page:-</h3>
-<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/Landing.gif" alt="Landing" width="500px" height="250px">
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/2.gif" alt="Landing" width="500px" height="250px">
 
 <h3>Booking and Booked section:-</h3>
-<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/booking.gif" alt="Booking" width="500px" height="250px">
+<img src="https://github.com/Yash18-sudo/Meeting-Rooms/blob/master/assets/3.gif" alt="Booking" width="500px" height="250px">
   
   
 <h2>💡 Features</h2>
@@ -42,7 +42,12 @@ Here're some of the project's best features:
 ```
 git clone https://github.com/Yash18-sudo/Meeting-Rooms.git
 ```
-  </br>
+
+<h2>💻📱 Usage Steps:</h2>
+<p>1. Create an account using register.</p>
+<p>2. Login using the created account. </p>
+<p>3. Enjoy booking meeting rooms now. </p>  
+</br>
 <h2>💻 
 Technologies used in the project:</h2>
 
